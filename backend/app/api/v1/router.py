@@ -1,0 +1,8 @@
+from fastapi import APIRouter
+from app.api.v1.endpoints import health, resumes
+
+api_router = APIRouter()
+
+# Register endpoint routers
+api_router.include_router(health.router, tags=["Health"])
+api_router.include_router(resumes.router, prefix="/resumes", tags=["Resumes"])
