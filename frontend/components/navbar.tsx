@@ -1,12 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { Sparkles, Bot, FileText, LayoutDashboard } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 /**
  * Navbar Component
- * 
- * Note: Once shadcn/ui is initialized (npx shadcn@latest init), 
- * button elements can be replaced with `@/components/ui/button`.
  */
 export const Navbar: React.FC = () => {
   return (
@@ -46,12 +44,9 @@ export const Navbar: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href="/dashboard"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
-          >
-            Get Started
-          </Link>
+          <Button asChild>
+            <Link href="/dashboard">Get Started</Link>
+          </Button>
         </div>
       </div>
     </header>
